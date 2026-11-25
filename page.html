@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { background: #f6f2e7; }
+  body { font-family: Arial, Helvetica, sans-serif; color: #161513; }
+  .page {
+    width: 1024px; height: 1024px; margin: 0 auto;
+    padding: 20px 26px 12px;
+    display: flex; flex-direction: column; gap: 2px;
+    background: #f6f2e7;
+  }
+  .topbar {
+    height: 14px; display: flex; justify-content: space-between;
+    font-size: 9px; letter-spacing: 2px; color: #6d675c;
+    border-bottom: 1px solid #161513; padding-bottom: 4px;
+  }
+  .nameplate {
+    height: 58px; text-align: center;
+    font-family: Georgia, 'Times New Roman', serif; font-size: 52px; font-weight: 700;
+    letter-spacing: -1px; line-height: 58px;
+    border-bottom: 3px solid #161513;
+  }
+  .dateline {
+    height: 22px; display: flex; justify-content: space-between;
+    align-items: center; border-bottom: 1px solid #161513;
+  }
+  .dateline .date { font-family: Georgia, 'Times New Roman', serif; font-size: 16px; font-weight: 700; }
+  .dateline .mid { font-size: 11px; color: #6d675c; letter-spacing: 1px; }
+  .dateline .right { font-size: 11px; }
+  .lead { height: 232px; display: flex; gap: 18px; padding: 10px 0 8px; }
+  .lead-text { width: 596px; flex: none; }
+  .kicker { color: #9e1b1b; font-size: 11px; font-weight: 700; letter-spacing: 2px; }
+  .lead h1 {
+    font-family: Georgia, 'Times New Roman', serif; font-size: 31px; line-height: 1.12;
+    font-weight: 700; margin: 6px 0 8px; letter-spacing: -0.3px;
+  }
+  .lead .deck { font-size: 12.5px; line-height: 1.5; }
+  .lead .src { margin-top: 8px; font-size: 9.5px; letter-spacing: 1.5px; color: #6d675c; }
+  .lead-art { width: 344px; flex: none; }
+  .lead-art .cap { font-size: 10px; font-style: italic; color: #6d675c; margin-top: 3px; }
+  .numbers { height: 74px; border-top: 2px solid #161513; border-bottom: 2px solid #161513; padding: 6px 0 5px; }
+  .numbers .ntitle { font-size: 10px; font-weight: 700; letter-spacing: 2px; margin-bottom: 5px; }
+  .numbers .cells { display: flex; }
+  .numbers .cell { flex: 1; padding: 0 12px; border-left: 1px solid #c9c2ae; }
+  .numbers .cell:first-child { border-left: none; padding-left: 0; }
+  .numbers .num { font-family: Georgia, 'Times New Roman', serif; font-size: 24px; font-weight: 700; line-height: 1; }
+  .numbers .lab { font-size: 9.5px; line-height: 1.3; margin-top: 3px; color: #3d3a33; }
+  .map { height: 140px; padding-top: 5px; }
+  .map .mtitle { display: flex; justify-content: space-between; font-size: 10px; font-weight: 700; letter-spacing: 2px; margin-bottom: 2px; }
+  .map .mtitle span:last-child { font-weight: 400; letter-spacing: 0; color: #6d675c; }
+  .cards { height: 228px; display: flex; flex-direction: column; gap: 6px; }
+  .cards .row { flex: 1; display: flex; gap: 16px; }
+  .card { flex: 1; border-top: 1px solid #161513; padding-top: 5px; }
+  .card .region { font-size: 9px; font-weight: 700; letter-spacing: 1.6px; }
+  .card h2 { font-family: Georgia, 'Times New Roman', serif; font-size: 15px; line-height: 1.18; margin: 3px 0 3px; }
+  .card p { font-size: 11px; line-height: 1.38; }
+  .card .src { margin-top: 3px; font-size: 9px; letter-spacing: 1.2px; color: #6d675c; }
+  .briefs { height: 100px; border-top: 2px solid #161513; padding-top: 5px; }
+  .briefs .btitle { font-size: 10px; font-weight: 700; letter-spacing: 2px; margin-bottom: 4px; }
+  .briefs .grid { display: flex; gap: 16px; }
+  .briefs .col { flex: 1; }
+  .briefs .item { font-size: 10px; line-height: 1.3; margin-bottom: 4px; }
+  .briefs .item b { font-weight: 700; }
+  .briefs .item .src { color: #6d675c; font-size: 9px; }
+  .datecheck { height: 88px; background: #161513; color: #f6f2e7; padding: 8px 14px 7px; }
+  .datecheck .dtitle { font-size: 11px; font-weight: 700; letter-spacing: 2px; margin-bottom: 4px; }
+  .datecheck .dtitle .sq { color: #9e1b1b; }
+  .datecheck p { font-size: 10px; line-height: 1.4; }
+</style></head>
+<body><div class="page">
+  <div class="topbar"><span>ONE DAY · ONE PAGE</span><span>THE WORLD, CHECKED</span><span>WEDNESDAY EDITION</span></div>
+  <div class="nameplate">The World in One Day</div>
+  <div class="dateline">
+    <span class="date">Wednesday, 25 November 2026</span>
+    <span class="mid">THANKSGIVING EVE · ALL TIMES UTC</span>
+    <span class="right">16 verified stories · sources named on every story</span>
+  </div>
+  <div class="lead">
+    <div class="lead-text">
+      <div class="kicker">EMERGENCY &nbsp;·&nbsp; OCEANIA &nbsp;·&nbsp; FLINDERS ISLAND, TASMANIA</div>
+      <h1>&lsquo;Too late to leave&rsquo;: half of Flinders Island under bushfire emergency</h1>
+      <p class="deck">Tasmania&rsquo;s fire service issued an emergency warning for
+      Killiecrankie, Leeka and Mount Tanner on Wednesday morning, telling
+      residents it was too late to leave as the lightning-lit fire &mdash;
+      about 3,000 hectares &mdash; swept the island. Evacuations are under
+      way and half the island sits under warnings.</p>
+      <p class="src">ABC NEWS &nbsp;·&nbsp; 7NEWS &nbsp;·&nbsp; PULSE TASMANIA</p>
+    </div>
+    <div class="lead-art">
+<svg width="344" height="196" viewBox="0 0 344 196" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="344" height="196" fill="#ece5d2"/>
+  <circle cx="272" cy="34" r="20" fill="#e8c96a" opacity="0.85"/>
+  <path d="M40 150 Q70 96 128 92 Q150 60 205 70 Q250 56 292 84 Q330 100 318 150 Q300 178 240 182 Q150 190 96 178 Q52 170 40 150 Z"
+    fill="#8a9a7b" stroke="#5d6b52" stroke-width="2"/>
+  <path d="M96 178 Q150 190 240 182 Q300 178 318 150 L344 196 L0 196 L40 150 Q52 170 96 178 Z" fill="#7fa3c8" opacity="0.7"/>
+  <path d="M150 96 Q138 76 152 58 Q146 84 162 88 Q156 66 176 52 Q172 80 188 86 Q178 74 196 66 Q192 92 178 100 Q160 108 150 96 Z" fill="#9e1b1b"/>
+  <path d="M196 108 Q190 92 202 78 Q198 98 212 100 Q206 84 222 74 Q218 98 206 108 Q198 114 196 108 Z" fill="#e07830"/>
+  <path d="M112 108 Q104 96 116 84 Q112 100 124 102 Q118 90 132 82 Q128 102 118 110 Q110 114 112 108 Z" fill="#e07830"/>
+  <path d="M168 52 Q160 34 176 22 Q172 38 186 34 Q178 44 186 52 Q176 58 168 52 Z" fill="#8f8f8f" opacity="0.75"/>
+  <path d="M226 62 Q220 46 234 36 Q230 50 242 46 Q236 56 244 62 Q234 68 226 62 Z" fill="#8f8f8f" opacity="0.75"/>
+  <g transform="translate(292 128)">
+    <path d="M0 -16 L15 12 L-15 12 Z" fill="#f6f2e7" stroke="#9e1b1b" stroke-width="2.5"/>
+    <text x="0" y="8" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#9e1b1b" text-anchor="middle">!</text>
+  </g>
+  <text x="14" y="24" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="700" letter-spacing="2" fill="#5d6b52">FLINDERS ISLAND</text>
+  <text x="14" y="38" font-family="Arial, Helvetica, sans-serif" font-size="10" letter-spacing="1" fill="#5d6b52">BASS STRAIT · TASMANIA</text>
+</svg>
+      <div class="cap">Flinders Island, Tasmania &mdash; the emergency warning went out at 10:17am.</div>
+    </div>
+  </div>
+  <div class="numbers">
+    <div class="ntitle">THE DAY IN NUMBERS</div>
+    <div class="cells">
+      <div class="cell"><div class="num">4.9%</div><div class="lab">Australia CPI, year to Oct &mdash; up from 4.3% in Sep (ABS)</div></div>
+      <div class="cell"><div class="num">+3.4%</div><div class="lab">US Q3 GDP, 2nd estimate, annualised (BEA)</div></div>
+      <div class="cell"><div class="num">5.3</div><div class="lab">Nepal earthquake magnitude; felt in India, Bhutan, China (NDTV)</div></div>
+      <div class="cell"><div class="num">490,000</div><div class="lab">Russian soldiers killed in Ukraine, a report says (NDTV)</div></div>
+      <div class="cell"><div class="num">200 off 52</div><div class="lab">Sooryavanshi&rsquo;s record 200, India A v UAE (NDTV)</div></div>
+    </div>
+  </div>
+
+  <div class="map">
+    <div class="mtitle"><span>WHERE IT HAPPENED</span><span>Pins mark Wednesday&rsquo;s stories</span></div>
+    
+<svg width="972" height="124" viewBox="0 0 972 124" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="972" height="124" fill="#ece5d2"/>
+  <g fill="#ddd6c0" stroke="#b3ab90" stroke-width="1">
+    <path d="M55 28 L95 12 L150 10 L195 18 L212 32 L185 48 L152 58 L118 62 L88 56 L62 42 Z"/>
+    <path d="M218 6 L242 10 L238 20 L216 16 Z"/>
+    <path d="M232 58 L262 52 L288 62 L282 88 L256 108 L236 92 L226 72 Z"/>
+    <path d="M438 18 L480 10 L512 18 L502 38 L462 40 L440 30 Z"/>
+    <path d="M432 22 L442 20 L444 30 L434 32 Z"/>
+    <path d="M444 48 L500 44 L532 58 L522 88 L482 108 L454 88 L440 62 Z"/>
+    <path d="M520 12 L700 6 L802 16 L832 32 L782 48 L720 52 L650 46 L580 42 L530 32 L514 20 Z"/>
+    <ellipse cx="700" cy="66" rx="10" ry="4"/><ellipse cx="730" cy="72" rx="12" ry="4"/><ellipse cx="760" cy="68" rx="9" ry="4"/>
+    <path d="M768 84 L832 80 L848 94 L802 104 L764 98 Z"/>
+    <path d="M836 38 L848 36 L850 56 L838 58 Z"/>
+  </g>
+  <g font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#161513"
+     style="paint-order: stroke" stroke="#ece5d2" stroke-width="3">
+    <circle cx="157" cy="36" r="4.5" fill="#9e1b1b" stroke="#f6f2e7" stroke-width="1.5"/>
+    <text x="165" y="39">Santa Clara</text>
+    <circle cx="278" cy="34" r="4.5" fill="#9e1b1b" stroke="#f6f2e7" stroke-width="1.5"/>
+    <text x="286" y="37">Washington</text>
+    <circle cx="440" cy="57" r="4.5" fill="#9e1b1b" stroke="#f6f2e7" stroke-width="1.5"/>
+    <text x="448" y="60">Dakar</text>
+    <circle cx="502" cy="28" r="4.5" fill="#9e1b1b" stroke="#f6f2e7" stroke-width="1.5"/>
+    <text x="510" y="31">Geneva</text>
+    <circle cx="586" cy="18" r="4.5" fill="#9e1b1b" stroke="#f6f2e7" stroke-width="1.5"/>
+    <text x="594" y="21">Moscow</text>
+    <circle cx="716" cy="45" r="4.5" fill="#9e1b1b" stroke="#f6f2e7" stroke-width="1.5"/>
+    <text x="708" y="48" text-anchor="end">Kathmandu</text>
+    <circle cx="751" cy="33" r="4.5" fill="#9e1b1b" stroke="#f6f2e7" stroke-width="1.5"/>
+    <text x="759" y="36">Jiuquan</text>
+    <circle cx="918" cy="80" r="4.5" fill="#9e1b1b" stroke="#f6f2e7" stroke-width="1.5"/>
+    <text x="910" y="83" text-anchor="end">Honiara</text>
+    <circle cx="886" cy="110" r="4.5" fill="#9e1b1b" stroke="#f6f2e7" stroke-width="1.5"/>
+    <text x="894" y="113">Flinders Is.</text>
+  </g>
+</svg>
+  </div>
+  <div class="cards">
+    <div class="row">
+      <div class="card">
+        <div class="region">OCEANIA &nbsp;·&nbsp; ECONOMY</div>
+        <h2>Australia&rsquo;s inflation jumps to 4.9%</h2>
+        <p>The CPI rose 4.9% in the year to October, up from 4.3% in
+        September and hotter than expected &mdash; the October rise alone
+        was 0.5%.</p>
+        <p class="src">ABS &nbsp;·&nbsp; ABC NEWS</p>
+      </div>
+      <div class="card">
+        <div class="region">AMERICAS &nbsp;·&nbsp; ECONOMY</div>
+        <h2>Thanksgiving Eve data pile lands in Washington</h2>
+        <p>The BEA released the second estimate of Q3 GDP and October&rsquo;s
+        income and outlays &mdash; PCE inflation included &mdash; at 8:30am
+        ET, a day before Thanksgiving.</p>
+        <p class="src">U.S. BEA</p>
+      </div>
+      <div class="card">
+        <div class="region">ASIA &nbsp;·&nbsp; SPACE</div>
+        <h2>Shenzhou-24 lifts off with China&rsquo;s first foreign astronaut</h2>
+        <p>Tang Hongbo, Wu Yi and Pakistan&rsquo;s Muhammad Zeeshan Ali rode
+        the Long March-2F from Jiuquan on the 41st crewed Chinese mission.</p>
+        <p class="src">XINHUA &nbsp;·&nbsp; CGTN</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="card">
+        <div class="region">EUROPE &nbsp;·&nbsp; SPORT</div>
+        <h2>Gukesh takes White into Game 2</h2>
+        <p>The champion plays White in Geneva on Wednesday after Tuesday&rsquo;s
+        opener with Sindarov ended in a 38-move draw by repetition.</p>
+        <p class="src">ESPN &nbsp;·&nbsp; THE HINDU</p>
+      </div>
+      <div class="card">
+        <div class="region">OCEANIA &nbsp;·&nbsp; DIPLOMACY</div>
+        <h2>Canberra becomes Solomon Islands&rsquo; defence partner</h2>
+        <p>Australia and Solomon Islands signed a security pact on
+        Wednesday, making Canberra the Pacific nation&rsquo;s defence partner.</p>
+        <p class="src">REUTERS</p>
+      </div>
+      <div class="card">
+        <div class="region">EUROPE &nbsp;·&nbsp; DIPLOMACY</div>
+        <h2>Putin hosts the Sultan of Brunei in Moscow</h2>
+        <p>Talks on Wednesday cover politics, the economy and culture,
+        with a joint declaration to follow the state visit.</p>
+        <p class="src">KREMLIN</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="briefs">
+    <div class="btitle">IN BRIEF</div>
+    <div class="grid">
+      <div class="col">
+        <div class="item"><b>Trump to unveil new tariffs</b> on India, China, the EU and 13 partners. <span class="src">INDIAN EXPRESS</span></div>
+        <div class="item"><b>Nepal quake, magnitude 5.3,</b> shakes India, Bhutan and China. <span class="src">NDTV</span></div>
+        <div class="item"><b>Nvidia&rsquo;s Jensen Huang</b> gets a hero&rsquo;s welcome back at HQ. <span class="src">NDTV</span></div>
+      </div>
+      <div class="col">
+        <div class="item"><b>US targets Iran&rsquo;s shadow-banking networks</b> in new sanctions. <span class="src">NDTV</span></div>
+        <div class="item"><b>Sooryavanshi, 200 off 52 balls</b> &mdash; the fastest in cricket history. <span class="src">NDTV</span></div>
+        <div class="item"><b>490,000 Russian soldiers killed</b> in Ukraine, a report says. <span class="src">NDTV</span></div>
+      </div>
+      <div class="col">
+        <div class="item"><b>16 Days of Activism begins</b> on the day against violence on women. <span class="src">UN</span></div>
+        <div class="item"><b>Africa Cup title goes back to Senegal</b> as CAS rules against Morocco. <span class="src">THE HINDU</span></div>
+        <div class="item"><b>India&rsquo;s defence staff warned</b> over messaging apps. <span class="src">THE HINDU</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="datecheck">
+    <div class="dtitle"><span class="sq">&#9632;</span> DATE CHECK &mdash; WHAT WE LEFT OUT</div>
+    <p>These made the headlines but are not 25 November news, so they are
+    not in this paper: the Huawei guilty verdict (24 Nov); the Houthi drone
+    that hit Riyadh&rsquo;s PIF tower, 11 hurt (24 Nov); Ukraine&rsquo;s
+    confirmed strike on a Russian ship in the Gulf of Finland (24 Nov);
+    COP31 closing with no deal (24 Nov); Real Madrid 5&ndash;1 PSV
+    (24 Nov); the Gukesh&ndash;Sindarov Game 1 draw (24 Nov); Gibran&rsquo;s
+    resignation (12 Nov) and Prabowo naming two VP nominees (23 Nov).
+    Everything above happened, or was first reported, on Wednesday
+    25 November 2026.</p>
+  </div>
+</div></body></html>
